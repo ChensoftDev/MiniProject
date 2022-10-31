@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp"
+    app:cardMaxElevation="10dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <!-- In the above cardview widget cardelevation property will give elevation to your card view
+        card corner radius will provide radius to your card view card background color will give
+        background color to your card view card max elevation will give the cardview maximum
+        elevation card prevent corner overlap will add padding to CardView on v20 and before to
+        prevent intersections between the Card content and rounded corners. Card use compact padding
+        will add padding in API v21+ as well to have the same measurements with previous versions -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp">
+
+        <!-- ImageVIew to display our Course Image -->
+
+        <!-- Text View to display Course Name -->
+
+        <!-- Text VIew to display Course Rating -->
+        <!-- Image used in present in drawable folder -->
+        <TextView
+            android:id="@+id/idTVTourDiff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTVTourCat"
+            android:layout_alignStart="@+id/idTVTourDate"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="2dp"
+            android:paddingStart="10dp"
+            android:text="@string/difficulty"
+            app:drawableStartCompat="@drawable/ic_baseline_av_timer_24" />
+
+        <TextView
+            android:id="@+id/idTVTourCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTVTourDate"
+            android:layout_alignStart="@+id/idTVTourDate"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="2dp"
+            android:paddingStart="10dp"
+            android:text="@string/category"
+            android:textAlignment="textStart"
+            android:textColor="#2E7D32"
+            app:drawableStartCompat="@drawable/ic_baseline_ballot_24" />
+
+        <TextView
+            android:id="@+id/idTVTourDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idTVTournamentName"
+            android:layout_alignStart="@+id/idTVTournamentName"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="2dp"
+            android:paddingLeft="10dp"
+            android:text="@string/date"
+            android:textAlignment="textStart"
+            app:drawableStartCompat="@drawable/ic_baseline_date_range_24" />
+
+        <TextView
+            android:id="@+id/idTVTournamentName"
+            android:layout_width="357dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/name"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/idTVTourLike"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTVTourDiff"
+            android:layout_alignStart="@+id/idTVTourDiff"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="2dp"
+            android:paddingLeft="10dp"
+            android:text="@string/like"
+            app:drawableStartCompat="@drawable/ic_baseline_star_24" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idTVTourDiff"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="#059700"
+            android:text="Avaliable"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

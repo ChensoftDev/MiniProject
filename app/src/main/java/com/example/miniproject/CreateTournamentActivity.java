@@ -245,7 +245,22 @@ public class CreateTournamentActivity extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         // on below line we are setting date to our edit text.
-                        et.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+
+                        String Month,Day;
+
+                        if((monthOfYear+1) < 10) {
+                            Month = "0" + (monthOfYear + 1);
+                        } else {
+                            Month =  "" + (monthOfYear + 1);
+                        }
+
+                        if(dayOfMonth < 10) {
+                            Day = "0" + dayOfMonth;
+                        } else {
+                            Day = "" + dayOfMonth;
+                        }
+
+                        et.setText(year + "-" + Month + "-" + Day);
 
                     }
                 },

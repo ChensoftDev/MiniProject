@@ -4,37 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:background="#EAEAEA"
+    android:padding="20dp"
     tools:context=".QuizActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore"
+        tools:layout_editor_absoluteX="13dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/tvQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Question here Loading..."
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvQuestionNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="5dp"
         android:text="Questions 1/n"
         android:textColor="#000000"
         android:textSize="17sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_baseline_ballot_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:drawablePadding="5dp"
         android:text="Score : 0"
         android:textColor="#000000"
         android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuestionNo"
-        tools:layout_editor_absoluteX="16dp" />
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_baseline_star_24"
+        app:layout_constraintStart_toStartOf="@+id/tvQuestionNo"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestionNo" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="158dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="16dp"
+        android:text="NEXT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroupAns"
         android:layout_width="wrap_content"
         android:layout_height="233dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
-        tools:layout_editor_absoluteX="10dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <RadioButton
             android:id="@+id/rb1"
@@ -73,27 +125,5 @@
             android:textStyle="bold" />
 
     </RadioGroup>
-
-    <TextView
-        android:id="@+id/tvQuestion"
-        android:layout_width="390dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:text="Question here Loading..."
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="10dp" />
-
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="158dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="16dp"
-        android:text="NEXT"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -103,6 +103,8 @@ public class QuizActivity extends AppCompatActivity {
         // Finally, show the progress dialog
         pd.show();
 
+        setTitle(selected_tournament.toString());
+
 
         loadQuesion();
 

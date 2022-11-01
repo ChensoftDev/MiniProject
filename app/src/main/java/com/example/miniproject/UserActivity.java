@@ -10,6 +10,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -51,7 +53,7 @@ public class UserActivity extends AppCompatActivity {
                     return true;
                 case R.id.Logout:
                     logoutUser();
-                    return true;
+                    break;
 
             }
             return false;
@@ -74,10 +76,29 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void logoutUser(){
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(this,LoginActivity.class);
-        startActivity(intent);
-        finish();
+
+        AlertDialog alertDialog = new AlertDialog.Builder(UserActivity.this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Sign out")
+                .setMessage("Are you sure to sign out the application?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(UserActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        //set what should happen when negative button is clicked
+                        //Toast.makeText(getApplicationContext(),"Nothing Happened",Toast.LENGTH_LONG).show();
+                    }
+                })
+                .show();
     }
 
     @Override
